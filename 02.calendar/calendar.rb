@@ -4,8 +4,8 @@ require 'optparse'
 params = OptionParser.new
 params = ARGV.getopts("", "y:#{Date.today.year}", "m:#{Date.today.month}")
 
-month = params.values[1].to_i
-year = params.values[0].to_i
+month = params["m"].to_i
+year = params["y"].to_i
 
 first_wday = Date.new(year, month, 1).wday
 end_date = Date.new(year, month, -1).day
