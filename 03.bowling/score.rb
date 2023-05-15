@@ -28,11 +28,9 @@ frames.each_with_index do |frame, i|
   total_point += frame.sum
 
   if strike && next_frame[0] == 10
-    bonus_point = next_frame[0] + next_frame[1] + next_next_frame[0]
-    total_point += bonus_point
+    total_point += next_frame[0] + next_frame[1] + next_next_frame[0]
   elsif strike
-    bonus_point = next_frame[0] + next_frame[1]
-    total_point += bonus_point
+    total_point += next_frame[0] + next_frame[1]
   elsif spare
     total_point += next_frame[0]
   end
